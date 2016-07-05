@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extension id="asset_pipeline_scss" status="released" xmlns="http://getsymphony.com/schemas/extension/1.0">
-    <name>Asset Pipeline SCSS Compiler</name>
-    <description>A plugin for the Asset Pipeline extension.</description>
+    <name>Asset Pipeline SCSS</name>
+    <description>An SCSS compiler plugin for the Asset Pipeline extension.</description>
     <repo type="github">https://github.com/Petertron/asset_pipeline_scss</repo>
     <!--<url type="discuss">http://getsymphony.com/discuss/thread/</url>-->
     <types>
