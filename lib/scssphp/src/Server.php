@@ -2,7 +2,7 @@
 /**
  * SCSSPHP
  *
- * @copyright 2012-2015 Leaf Corcoran
+ * @copyright 2012-2017 Leaf Corcoran
  *
  * @license http://opensource.org/licenses/MIT MIT
  *
@@ -448,16 +448,5 @@ class Server
         if (! ini_get('date.timezone')) {
             date_default_timezone_set('UTC');
         }
-    }
-
-    /**
-     * Helper method to serve compiled scss
-     *
-     * @param string $path Root path
-     */
-    public static function serveFrom($path)
-    {
-        $server = new self($path);
-        $server->serve();
     }
 }

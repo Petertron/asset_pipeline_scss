@@ -2,19 +2,23 @@
 <extension id="asset_pipeline_scss" status="released" xmlns="http://getsymphony.com/schemas/extension/1.0">
     <name>Asset Pipeline SCSS Compiler</name>
     <description>A plugin for the Asset Pipeline extension.</description>
-    <repo type="github">https://github.com/Petertron/asset_pipeline_scss</repo>
+    <repo type="github">https://github.com/petertron/asset_pipeline_scss</repo>
     <!--<url type="discuss">http://getsymphony.com/discuss/thread/</url>-->
     <types>
         <type>Other</type>
     </types>
     <authors>
         <author>
-            <name github="Petertron" symphony="Petertron">Peter Skirenko</name>
+            <name github="petertron" symphony="Petertron">Peter Skirenko</name>
             <email>petertron@mailservice.ms</email>
             <website>http://www.getsymphony.com/get-involved/member/Petertron/</website>
         </author>
     </authors>
     <releases>
+        <release version="0.2.0" date="2017-03-05" min="2.5.0" max="2.7.0">
+            - Compatibility with Asset Pipeline version 0.2.x.
+            - SCSS compiler updated to version 0.6.7
+        </release>
         <release version="0.1.0" date="2016-07-05" min="2.5.0" max="2.7.0">
             - Initial release.
         </release>

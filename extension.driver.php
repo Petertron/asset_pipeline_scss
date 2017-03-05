@@ -1,24 +1,31 @@
 <?php
 
-class extension_asset_pipeline_scss extends Extension
+class extension_Asset_pipeline_scss extends Extension
 {
+    public $error;
+
+    public function getOutputType()
+    {
+        return 'css';
+    }
+
     public function getSubscribedDelegates()
     {
         return array(
             array(
                 'page' => '/extension/asset_pipeline/',
-                'delegate' => 'RegisterPlugins',
+                'delegate' => 'RegisterPreprocessors',
                 'callback' => 'register'
             )
         );
     }
 
-    function register($context)
+    public function register($context)
     {
-        $context['plugins']['scss'] = array('output_type' => 'css', 'driver' => $this);
+        $context['preprocessors']['scss'] = $this;
     }
 
-    public function compile($content, $import_dir = null)
+    public function convert($content, $import_dir = null)
     {
         require_once __DIR__ . '/lib/scssphp/scss.inc.php';
 
@@ -32,8 +39,8 @@ class extension_asset_pipeline_scss extends Extension
         try {
             $output = $compiler->compile($content);
         } catch (Exception $e) {
-            return array('error' => $e->getMessage());
+            $this->error = $e->getMessage();
         }
-        return array('output' => $output);
+        return $output;
     }
 }
