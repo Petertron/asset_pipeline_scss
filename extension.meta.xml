@@ -10,11 +10,14 @@
     <authors>
         <author>
             <name github="petertron" symphony="Petertron">Peter Skirenko</name>
-            <email>petertron@mailservice.ms</email>
+            <email>peter.s@mail.uk</email>
             <website>http://www.getsymphony.com/get-involved/member/Petertron/</website>
         </author>
     </authors>
     <releases>
+        <release version="0.3.0" date="2021-07-12" min="2.5.0" max="3.0.0">
+            - SCSS compiler updated to latest version.
+        </release>
         <release version="0.2.0" date="2017-03-05" min="2.5.0" max="2.7.0">
             - Compatibility with Asset Pipeline version 0.2.x.
             - SCSS compiler updated to version 0.6.7

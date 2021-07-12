@@ -1,5 +1,7 @@
 <?php
 
+use ScssPhp\ScssPhp\Compiler;
+
 class extension_Asset_pipeline_scss extends Extension
 {
     public $error;
@@ -29,15 +31,15 @@ class extension_Asset_pipeline_scss extends Extension
     {
         require_once __DIR__ . '/lib/scssphp/scss.inc.php';
 
-        $compiler = new Leafo\ScssPhp\Compiler();
+        $compiler = new Compiler();
         $compiler->setImportPaths($import_dir);
         if (APP_MODE == 'administration') {
-            $compiler->setFormatter('Leafo\ScssPhp\Formatter\Crunched');
+            $compiler->setOutputStyle(\ScssPhp\ScssPhp\OutputStyle::COMPRESSED);
         } else {
-            $compiler->setFormatter('Leafo\ScssPhp\Formatter\Expanded');
+            $compiler->setOutputStyle(\ScssPhp\ScssPhp\OutputStyle::EXPANDED);
         }
         try {
-            $output = $compiler->compile($content);
+            $output = $compiler->compileString($content)->getCss();
         } catch (Exception $e) {
             $this->error = $e->getMessage();
         }
